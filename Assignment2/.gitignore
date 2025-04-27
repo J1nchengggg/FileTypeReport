@@ -1,0 +1,8 @@
+﻿bin/
+obj/
+*.user
+*.suo
+*.userprefs
+.idea/
+.vscode/
+*.csproj.user
