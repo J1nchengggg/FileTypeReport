@@ -1,5 +1,5 @@
 ﻿// Program.cs
-// Jincheng Jiang, 
+// Jincheng Jiang, Helen Ton, Dylan Peacock, Hitha Sunkara
 // CECS 342 Assignment 2
 // File Type Report
 // Solution Template
