@@ -54,10 +54,13 @@ namespace FileTypeReport {
         from file in files
         // TODO: Fill in your code here.
         let extension = Path.GetExtension(file).ToLower()
+        group file by extension into g
+        let totalSize = g.Sum(f => new FileInfo(f).Length)
+        orderby totalSize descending
         select new {
-          Type =      // TODO: Fill in your code here.
-          Count =     // TODO: Fill in your code here.
-          TotalSize = // TODO: Fill in your code here.
+          Type = g.Key,
+          Count = g.Count(),
+          TotalSize = totalSize
         };
 
       // 3. Functionally construct XML
