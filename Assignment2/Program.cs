@@ -20,7 +20,7 @@ namespace FileTypeReport {
 		
 		//loop and yield all files
 		foreach (FileInfo f in files) {           
-		    yield return f.Name;
+		    yield return f.FullName;
 		}
 		
 		//loop and go to all sub directories recursively
@@ -37,13 +37,15 @@ namespace FileTypeReport {
       string[] units = { "B", "kB", "MB", "GB", "TB", "PB", "EB", "ZB" };
       double size = byteSize;
       int unitIndex = 0;
-
+      //Start with the original number of bytes.
       while (size >= 1000 && unitIndex < units.Length - 1) {
 	      size /= 1000;
 	      unitIndex++;
       }
+      //While the size is >= 1000: Divide by 1000. Move to the next unit (B → kB → MB → etc.).
 
       return $"{size:F2} {units[unitIndex]}";
+      //format the number with 2 digits after the decimal point.
     }
     
 
@@ -51,17 +53,20 @@ namespace FileTypeReport {
     private static XDocument CreateReport(IEnumerable<string> files) {
       // 2. Process data
       var query =
-        from file in files
-        // TODO: Fill in your code here.
-        let extension = Path.GetExtension(file).ToLower()
+        from file in files // for each file 
+        let extension = Path.GetExtension(file).ToLower() 
+        //get its extension (like .txt, .jpg) and make lowercase.
         group file by extension into g
+        //group all files by type.
         let totalSize = g.Sum(f => new FileInfo(f).Length)
+        //add up the file sizes.
         orderby totalSize descending
+        //biggest types first.
         select new {
           Type = g.Key,
           Count = g.Count(),
           TotalSize = totalSize
-        };
+        };//create a new object with Type, Count, TotalSize.
 
       // 3. Functionally construct XML
       var alignment = new XAttribute("align", "right");
@@ -72,6 +77,8 @@ namespace FileTypeReport {
           new XElement("td", item.Type),
           new XElement("td", alignment, item.Count),
           new XElement("td", alignment, FormatByteSize(item.TotalSize))
+          //new XElement("tr", ...) → makes a new table row <tr>.
+          //Each td (cell) shows: File type, Count, Formatted total size (using FormatByteSize()!) 
         )
       );
         
@@ -93,12 +100,16 @@ namespace FileTypeReport {
     }
 
     // Console application with two arguments
-    public static void Main(string[] args) {
+    public static void Main(string[] args) 
+    //args is a list of strings you type when you run the program (command line arguments)
+    {
       try {
-        string inputFolder = args[0];
-        string reportFile  = args[1];
+        string inputFolder = args[0];//args[0] = first input = folder to scan.
+        string reportFile  = args[1];//args[1] = second input = file path to save HTML report.
         CreateReport(EnumerateFilesRecursively(inputFolder)).Save(reportFile);
-      } catch {
+      } //Calls EnumerateFilesRecursively(inputFolder) → get all files inside.
+      //Passes that list to CreateReport(). and Saves the output as the HTML file.
+      catch {
         Console.WriteLine("Usage: FileTypeReport <folder> <report file>");
       }
     }
