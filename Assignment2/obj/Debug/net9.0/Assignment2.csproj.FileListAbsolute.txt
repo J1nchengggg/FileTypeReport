@@ -1,0 +1,15 @@
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\bin\Debug\net9.0\Assignment2.exe
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\bin\Debug\net9.0\Assignment2.deps.json
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\bin\Debug\net9.0\Assignment2.runtimeconfig.json
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\bin\Debug\net9.0\Assignment2.dll
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\bin\Debug\net9.0\Assignment2.pdb
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.AssemblyInfoInputs.cache
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.AssemblyInfo.cs
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.csproj.CoreCompileInputs.cache
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.sourcelink.json
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.dll
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\refint\Assignment2.dll
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.pdb
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\Assignment2.genruntimeconfig.cache
+D:\Desktop\CSCE342\Assignment2\Assignment2\Assignment2\obj\Debug\net9.0\ref\Assignment2.dll

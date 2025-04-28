@@ -1,8 +1,9 @@
 ﻿// Program.cs
-//
+// Jincheng Jiang, 
 // CECS 342 Assignment 2
 // File Type Report
 // Solution Template
+// Using JetBrains Rider, GitHub, ChatGPT
 
 using System;
 using System.Collections.Generic;
